@@ -1,0 +1,86 @@
+Extensões VSCode:
+c#
+c# extension
+Bracket Pair Colorizer(fechamento de chaves)
+Material Icon Theme
+Path Intellisense
+NuGet Package Manager
+
+
+1-Criar a WebApi:
+ dotnet new webapi -n Padaria.WebAPI
+2-Mude em launchSettings para "launchUrl": "api/values",
+
+Dica:dot net watch run (aceita alterações no codigo enquanto executa)
+
+3-Comentar em startup o codigo :app.UseHttpsRedirection();
+para que o postman funcione no http
+
+4-Criar os models/domains
+5- Criar o datacontext que deve herdar de DbContext
+
+Dica: Ctrl + P (Abre a pesquisa onde vc pode abrir o Nuget para instalar pacotes)
+
+5.1- Instale o EF:
+dotnet add package Microsoft.EntityFrameworkCore
+6- Temos que definir o Dbcontext no Startup é la que vc decidi qual SGBD usar e que o dbContext vai iniciar
+7-5.1- Instale o SqlServer:
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+8- Adicione um Migrations:
+8.1- Para usar o comando dotnet ef especifique ele com: $ dotnet tool install --global dotnet-ef
+como diz no artigo da microsoft: https://docs.microsoft.com/pt-br/ef/core/what-is-new/ef-core-3.0/breaking-changes#dotnet-ef
+8.2- execute o comando: dotnet-ef migrations add init
+Nao esqueça de ter adicionado o Microsoft.EntityFrameworkCore.Design
+
+9-dotnet add package Pomelo.EntityFrameworkCore.MySql(para usar o mysql)
+
+10- Depois de adicionar a migration atualize a database:
+dotnet ef database update 
+
+11- Para criar um projeto usando o angular:
+ng new project
+
+12-Iniciar o projeto:
+ng serve -o
+
+Extensões Angular:
+Angular Files
+Angular Language Service
+angular2-switcher
+Auto Rename Tag
+live server
+npm
+Prettier - Code formatter
+TSLint
+
+13-npm i --save bootstrap @fortawesome/fontawesome-free
+
+14- Dividindo o projeto em camadas
+14.1-dotnet new classlib -n Padaria.Domain
+14.2-dotnet new classlib -n Padaria.Repository
+14.3-dotnet new sln -n Padaria
+
+15-Referenciando o projetos
+15.1-dotnet add Padaria.Repository\Padaria.Repository.csproj reference Padaria.Domain\Padaria.Domain.csproj
+15.2-dotnet add Padaria.WebAPI\Padaria.WebAPI.csproj reference Padaria.Domain\Padaria.Domain.csproj
+15.3-dotnet add Padaria.WebAPI\Padaria.WebAPI.csproj reference Padaria.Repository\Padaria.Repository.csproj
+
+16-Adicionando os projetos a solução
+16.1-dotnet sln Padaria.sln add 
+Padaria.WebAPI\Padaria.WebAPI.csproj Padaria.Repository\Padaria.Repository.csproj Padaria.Domain\Padaria.Domain.csproj
+
+17-Compile o projeto
+17.1- dotnet build
+
+18- Apos tornar o projeto como 3 camadas pecisamos fazer uma migration no repository
+18.1-dotnet ef --startup-project ../Padaria.WebAPI migrations add init
+
+19-depois atualize o banco de dados
+19.1-dotnet ef --startup-project ../Padaria.WebAPI database update
+
+
+20- comandos para instalar o toastr
+https://www.npmjs.com/package/ngx-toastr
+
+npm install ngx-toastr --save

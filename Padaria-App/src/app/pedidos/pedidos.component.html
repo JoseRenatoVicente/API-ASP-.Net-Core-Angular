@@ -1,0 +1,50 @@
+<!--form>.form-group.mb-2>input.form-control.mr-2-->
+<!--btn.btn.btn-outline-sucess{buscar}-->
+<div class="form-inline">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" placeholder="buscar"
+    [(ngModel)]="filtroLista"
+    >
+    <button class="btn btn-outline-primary">buscar</button>
+  </div>
+</div>
+
+<h3>Filtro: {{filtroLista}}</h3>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>     
+
+      <th>Valor Total</th>
+      <th>Preço</th>
+      <th>Descrição</th>
+      <th>Categoria</th>
+      <th>Opçôes</th>
+
+    </tr>
+  </thead>
+
+  <tbody *ngIf="pedidos && pedidos.length">
+    <tr *ngFor="let pedido of pedidosFiltrados">
+      <td>
+      </td>
+      <td>{{pedido.valorTotal}}</td>
+      <td>{{pedido.preco | currency }}</td>
+      <td>{{pedido.descricao}}</td>   
+      <td>{{pedido.vendas | json}}</td>   
+      <td>
+        <button class="btn btn-success"></button>
+        <button class="btn btn-danger"></button>
+      </td>
+    </tr>
+  </tbody>
+<tfoot *ngIf="!pedidos.length">
+  <tr>
+    <td colspan="7" class="text-center">
+      <h3>
+        Nenhum pedido encontrado
+      </h3>
+    </td>
+  </tr>
+</tfoot>
+</table>

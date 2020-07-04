@@ -1,0 +1,215 @@
+<!--form>.form-group.mb-2>input.form-control.mr-2-->
+<!--btn.btn.btn-outline-sucess{buscar}-->
+<div class="container">
+  
+  <app-titulo [titulo]="titulo"></app-titulo>
+
+<div class="d-flex">
+<div class="form-inline mr-auto">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" placeholder="buscar"
+    [(ngModel)]="filtroLista"
+    >
+    <button class="btn btn-outline-primary">buscar</button>
+  </div>
+</div>
+
+<div>
+  <button class="btn btn-outline-primary" (click)="novoProduto(template)">
+    <i class="fa fa-plus-circle"></i>
+    Novo Produto
+  </button>
+</div>
+
+
+</div>
+<h3>Filtro: {{filtroLista}}</h3>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <button class="btn btn-outline-primary"
+        (click)="alternarImagem()">
+         <i class="{{mostrarImagem ? 'fa fa-eye-slash' : 'fa fa-eye'}}"></i>
+        </button>
+      </th>
+
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Descrição</th>
+      <th>Status</th>
+      <th>Opções</th>
+
+    </tr>
+  </thead>
+
+  <tbody *ngIf="produtos && produtos.length">
+    <tr *ngFor="let produto of produtosFiltrados">
+      <td>
+        <img *ngIf="mostrarImagem"
+        src="http://localhost:5000/resources/images/{{produto.imagemUrl}}"
+        [style.width.px]="imagemLargura"
+        [style.margin.px]="imagemMargem">
+      </td>
+      <td>{{produto.nome}}</td>
+      <td>{{produto.preco | currency :'R$'}}</td>
+      <td>{{produto.descricao}}</td>    
+      <td>{{produto.status == 1 ? 'Disponivel' : produto.status == 0 ? 'Não disponivel' : produto.status }}</td>  
+      <td>
+
+        <div class="btn-group">
+
+          <button class="btn btn-sm btn-success" 
+          tooltip="Editar" (click)="editarProduto(produto, template)">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button class="btn btn-sm btn-danger"
+          tooltip="Excluir" (click)="excluirProduto(produto, confirm)">
+            <i class="fa fa-eraser"></i>
+          </button>
+
+      </div>
+
+      </td>
+    </tr>
+  </tbody>
+<tfoot *ngIf="!produtos">
+  <tr>
+    <td colspan="7" class="text-center">
+      <h3>
+        Nenhum produto encontrado
+      </h3>
+    </td>
+  </tr>
+</tfoot>
+</table>
+
+<div bsModal #template="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Large modal</h4>
+        <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>Nome</label>
+              <input type="text" class="form-control" 
+              [ngClass]="{'is-invalid': registerForm.get('nome').errors && registerForm.get('nome').touched}"
+              formControlName="nome">
+              <div *ngIf="registerForm.get('nome').hasError('required')" class="invalid-feedback">
+                O nome é obrigatório.
+              </div>
+              <div *ngIf="registerForm.get('nome').hasError('maxlength')" class="invalid-feedback">
+                O nome deve ter no maximo 100 Caracters.
+              </div>
+            </div>
+          </div>  
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label>Preço</label>
+              <input type="number" [ngClass]="{'is-invalid': registerForm.get('preco').errors 
+                && registerForm.get('preco').touched}" class="form-control is-invalid" formControlName="preco"
+                placeholder="">
+              <div *ngIf="registerForm.get('preco').hasError('required')
+                && registerForm.get('preco').touched" class="invalid-feedback">
+                O preço é obrigatório.
+              </div>
+              <div *ngIf="registerForm.get('preco').hasError('max')
+                && registerForm.get('preco').touched" class="invalid-feedback">
+                O preço deve ser menor que 10.
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label>Descrição</label>
+              <input type="text" class="form-control"
+              [ngClass]="{'is-invalid': registerForm.get('descricao').errors && registerForm.get('descricao').touched}"
+              formControlName="descricao">
+              <div *ngIf="registerForm.get('descricao').hasError('maxlength')" class="invalid-feedback">
+                A Descrição deve ter no maximo 100 Caracters.
+              </div>
+            </div>
+          </div>  
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label>Status</label>
+              <select class="form-control" [ngClass]="{'is-invalid': registerForm.get('status').errors && registerForm.get('status').touched}"
+              formControlName="status">
+                <option value="1">Disponivel</option>
+                <option value="0">Não Disponivel</option>
+              </select>
+              <div *ngIf="registerForm.get('status').hasError('required')" class="invalid-feedback">
+                Selecione o Status.
+              </div>
+            </div>
+            <div class="form-group col-md-9">
+              <label>Imagem</label>
+              <table>
+                <tr>
+                  <td>
+                    <button class="btn btn-success" (click)="file.click()">
+                Enviar Imagem
+              </button>
+              <!-- $event -->
+              <input type="file" #file [ngClass]="{'is-invalid': registerForm.get('imagemUrl').errors 
+              && registerForm.get('imagemUrl').touched}" (change)="onFileChange($event)" class="form-control is-invalid"
+                      formControlName="imagemUrl" placeholder="" style="display: none">
+                  </td>
+                </tr>
+              </table>    
+              <div *ngIf="registerForm.get('status').hasError('required')" class="invalid-feedback">
+                A Imagem é obrigatório.
+              </div>
+            </div>
+        
+            <p>Form Value: {{registerForm.value | json}}</p>
+            <p>Form Status: {{registerForm.status | json}}</p>
+           
+          </div> 
+        </form>
+      </div>
+      <div class="modal-footer d-flex">
+        <button class="btn btn-secondary" (click)="template.hide()">
+          Fechar
+        </button>
+        <button class="btn btn-primary ml-auto" [disabled]="!registerForm.valid" (click)="salvarAlteracao(template)">
+          Salvar Alterações
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+	<div class="modal-dialog modal-sm">
+  		<div class="modal-content">
+    		<div class="modal-header">
+      			<h4 class="modal-title pull-left">
+        			Deletando Produto
+      			</h4>
+      			<button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
+        			<span aria-hidden="true">&times;</span>
+      			</button>
+    		</div>
+    		<div class="modal-body">
+      			<p>{{bodyDeletarProduto}}</p>
+    		</div>    
+    		<div class="modal-footer btn-group d-flex">      
+      			<button type="button" class="btn btn-outline-primary" (click)="confirm.hide()">
+        			CENCELAR
+      			</button>
+      			<button type="button" class="btn btn-outline-danger" (click)="confirmeDelete(confirm)">
+          			DELETAR
+        		</button>
+    		</div>
+  		</div>
+	</div>
+</div>
+</div><!--Container-->
