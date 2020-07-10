@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Padaria.Domain;
-using Padaria.Domain.Identity;
+using Padaria.Domain.Entities;
+using Padaria.Domain.Entities.Identity;
+using System;
 
 namespace Padaria.Repository
 {
-    public class DataContext : IdentityDbContext<User, Role, int,
-                                                    IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>,
-                                                    IdentityRoleClaim<int>, IdentityUserToken<int>>
+    public class DataContext : IdentityDbContext<User, Role, Guid,
+                                                    IdentityUserClaim<Guid>, UserRole, IdentityUserLogin<Guid>,
+                                                    IdentityRoleClaim<Guid>, IdentityUserToken<Guid>>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
@@ -28,13 +28,22 @@ namespace Padaria.Repository
             modelBuilder.Entity<UserRole>(userRole =>
             {
                 userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
-            });
+
+                userRole.HasOne(ur => ur.Role)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.RoleId)
+                    .IsRequired();
+
+                userRole.HasOne(ur => ur.User)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.UserId)
+                    .IsRequired();
+            }
+            );
 
             modelBuilder.Entity<Venda>()
                 .HasKey(v => new { v.ProdutoId, v.PedidoId });
         }
-
-
 
     }
 }

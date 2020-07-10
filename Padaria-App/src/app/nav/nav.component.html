@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container"> 
-  <a class="navbar-brand" href="dashboard">Padaria</a>
+  <a class="navbar-brand" href="">Padaria</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
+  <div *ngIf="loggedIn()" class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="pedidos">Pedidos</a>
@@ -28,23 +28,25 @@
     </form>
   </div>
 
-  <ul class="navbar-nav">
+  <ul *ngIf="loggedIn()" class="navbar-nav">
     <li class="nav-item dropdown" dropdown>
-      <a dropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Nome do Usuario
+      <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="cursor: pointer; text-transform: capitalize;">
+        {{userName()}}
       </a>
       <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item">
           Perfil
         </a>
         <div role="separator" class="divider"></div>
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" (click)="logout()" style="cursor: pointer">
           Sair
         </a>
       </div>
     </li>
   </ul>
 
-  </div>
+  <button *ngIf="!loggedIn()" class="btn btn-success" (click)="entrar()">Entrar</button>
+
+</div>
 </nav>

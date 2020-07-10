@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Padaria.Domain;
+using Padaria.Domain.Entities;
 using Padaria.Repository;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Padaria.WebAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
 
@@ -35,7 +36,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
         }
@@ -54,7 +55,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
         }
@@ -77,7 +78,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             return BadRequest();
@@ -108,7 +109,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             return BadRequest();
@@ -137,7 +138,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             return BadRequest();

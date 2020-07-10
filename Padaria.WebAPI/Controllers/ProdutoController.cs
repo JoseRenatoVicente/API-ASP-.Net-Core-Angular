@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Padaria.Domain;
+using Padaria.Domain.Entities;
 using Padaria.Repository;
 using Padaria.WebAPI.Dtos;
 using System;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace Padaria.WebAPI.Controllers
 {
+   
     [Route("api/[controller]")]
     [ApiController]//Já identifica as validações e as requisiçoes via corpo
     public class ProdutoController : ControllerBase
@@ -30,6 +32,7 @@ namespace Padaria.WebAPI.Controllers
 
         //GET api/produto
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             try
@@ -44,7 +47,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
         }
@@ -73,7 +76,7 @@ namespace Padaria.WebAPI.Controllers
             }
             catch (System.Exception)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             //return BadRequest("Erro ao tentar realizar upload");
@@ -95,7 +98,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
         }
@@ -121,7 +124,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             return BadRequest();
@@ -153,7 +156,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             return BadRequest();
@@ -182,7 +185,7 @@ namespace Padaria.WebAPI.Controllers
             catch (System.Exception)
             {
 
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
 
             return BadRequest();

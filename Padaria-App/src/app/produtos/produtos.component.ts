@@ -4,6 +4,7 @@ import { Produto } from '../_models/Produto';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { HttpEventType, HttpEvent } from '@angular/common/http';
 
 
 @Component({
@@ -21,11 +22,12 @@ export class ProdutosComponent implements OnInit {
   imagemLargura = 50;
   imagemMargem = 2;
   mostrarImagem = false;
-  modoSalvar = 'post';
+  tituloModal = '';
   _filtroLista= '';
   registerForm: FormGroup;
   bodyDeletarProduto = '';
-
+  fileNameImagem: any;
+  progresso = 0;
   file: File;
   http: any;
 
@@ -46,14 +48,14 @@ export class ProdutosComponent implements OnInit {
     }
 
     editarProduto(produto: Produto, template: any) {
-      this.modoSalvar = 'put';
+      this.tituloModal = 'Editar';
       this.openModal(template);
       this.produto = produto;
       this.registerForm.patchValue(produto);
     }
 
     novoProduto(template: any) {
-      this.modoSalvar = 'post';
+      this.tituloModal = 'Adicionar';
       this.openModal(template);
     }
 
@@ -77,6 +79,7 @@ export class ProdutosComponent implements OnInit {
     }
 
     openModal(template: any) {
+      this.progresso = 0;
       this.registerForm.reset();
       template.show();
     }
@@ -98,50 +101,53 @@ export class ProdutosComponent implements OnInit {
   }
 
   onFileChange(produt) {
-
       this.file = produt.target.files;
-
   }
 
-  uploadImagem() {
+  uploadImagem(template) {
 
     const nomeArquivo = this.produto.imagemUrl.split('\\', 3);
     this.produto.imagemUrl = nomeArquivo[2];
-    this.produtoService.postUpload(this.file, nomeArquivo[2]).subscribe();
+    this.produtoService.postUpload(this.file, nomeArquivo[2])
+    .subscribe( (event: HttpEvent<Object>) => {
+      if (event.type === HttpEventType.Response){
+        template.hide();
+        this.toastr.success(`${this.tituloModal === 'Editar' ? 'Editado' : 'Adicionado' } com sucesso`);
+      } else if (event.type === HttpEventType.UploadProgress) {
+        const percentDone = Math.round((event.loaded * 100) / event.total);
+        this.progresso = percentDone;
+      }
+    });
   }
 
   salvarAlteracao(template: any) {
-    if (this.registerForm.valid) {
-      if (this.modoSalvar === 'post') {
-        template.hide();
+      if (this.tituloModal === 'Adicionar') {
         this.produto = Object.assign({}, this.registerForm.value);
-        this.uploadImagem();
+        this.uploadImagem(template);
         this.produtoService.postProduto(this.produto).subscribe(
           (novoProduto: Produto) => {
             console.log(novoProduto);
             this.getProdutos();
-            this.toastr.success('Salvo com sucesso');
           }, error => {
-            this.toastr.error(`Erro ao Inserir: ${error}`);
+            this.toastr.error('Erro ao Inserir');
             /*console.log(error);*/
           }
         );
       } else {
-        template.hide();
         this.produto = Object.assign({id: this.produto.id}, this.registerForm.value);
-        this.uploadImagem();
+        if (this.registerForm.valid){
+          this.uploadImagem(template);
+          }
         this.produtoService.putProduto(this.produto).subscribe(
            () => {
 
             this.getProdutos();
-            this.toastr.success('Editado com sucesso');
           }, error => {
             this.toastr.error(`Erro ao Inserir: ${error}`);
             /*console.log(error);*/
           }
         );
       }
-    }
   }
 
   validation() {

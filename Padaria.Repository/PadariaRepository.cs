@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Padaria.Domain;
+using Padaria.Domain.Entities;
+using Padaria.Domain.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Padaria.Repository
 {
     public class PadariaRepository : IPadariaRepository
     {
+       
 
         private readonly DataContext _context;
         public PadariaRepository(DataContext context)
@@ -24,18 +26,18 @@ namespace Padaria.Repository
         {
             _context.Add(entity);
         }
-
-
         public void Update<T>(T entity) where T : class
         {
             _context.Update(entity);
         }
-
         public void Delete<T>(T entity) where T : class
         {
             _context.Remove(entity);
         }
-
+        public void DeleteRange<T>(T[] entityArray) where T : class
+        {
+            _context.RemoveRange(entityArray);
+        }
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;

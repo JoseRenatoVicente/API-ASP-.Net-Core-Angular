@@ -20,7 +20,7 @@
     "Padaria.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/produto",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

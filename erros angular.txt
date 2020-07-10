@@ -1,0 +1,15 @@
+ng update
+npm ls @angular-devkit/schematics
+npm install @angular-devkit/schematics
+
+npm remove -g @angular/cli
+npm install -g @angular/cli
+
+npm install
+
+npm audit fix
+
+para instalar o JwtHelperService
+fonte: https://www.npmjs.com/package/@auth0/angular-jwt
+
+npm i @auth0/angular-jwt

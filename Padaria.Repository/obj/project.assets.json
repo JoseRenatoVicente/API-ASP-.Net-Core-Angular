@@ -1044,11 +1044,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\Padaria.Repository\\Padaria.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Repository\\Padaria.Repository.csproj",
       "projectName": "Padaria.Repository",
-      "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\Padaria.Repository\\Padaria.Repository.csproj",
+      "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Repository\\Padaria.Repository.csproj",
       "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\Padaria.Repository\\obj\\",
+      "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1067,8 +1067,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\Padaria.Domain\\Padaria.Domain.csproj": {
-              "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\Padaria.Domain\\Padaria.Domain.csproj"
+            "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\Padaria.Domain.csproj": {
+              "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\Padaria.Domain.csproj"
             }
           }
         }

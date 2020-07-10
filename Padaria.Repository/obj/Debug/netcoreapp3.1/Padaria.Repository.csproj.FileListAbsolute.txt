@@ -10,3 +10,15 @@ C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\Padaria.Repository\bin\Debu
 C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.dll
 C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.pdb
 C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\bin\Debug\netcoreapp3.1\Padaria.Repository.deps.json
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\bin\Debug\netcoreapp3.1\Padaria.Repository.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\bin\Debug\netcoreapp3.1\Padaria.Repository.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\bin\Debug\netcoreapp3.1\Padaria.Domain.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\bin\Debug\netcoreapp3.1\Padaria.Domain.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.csprojAssemblyReference.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.AssemblyInfoInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.AssemblyInfo.cs
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.csproj.CopyComplete
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project\Padaria.Repository\obj\Debug\netcoreapp3.1\Padaria.Repository.pdb

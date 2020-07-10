@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e+EdVKlpKb3LnX/aHJ8DCxtyU6Qz/dKuLeWsoDFxkUHqh+aAEabY9YDYYDD03mE3wxZL9E/1ixF67ySl4Op1yQ==",
+  "dgSpecHash": "LvkTHOUnmSdKHk1Sl9aOEOmvw9sUMRlmEQlRVj/JT/Pa4VcGDdmJTdCKBOYy7GdLge/4WCJidhtBMOLiiG0W7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\Padaria.Repository\\Padaria.Repository.csproj",
+  "projectFilePath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Repository\\Padaria.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jose\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.5\\microsoft.aspnetcore.cryptography.internal.3.1.5.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.5\\microsoft.aspnetcore.cryptography.keyderivation.3.1.5.nupkg.sha512",

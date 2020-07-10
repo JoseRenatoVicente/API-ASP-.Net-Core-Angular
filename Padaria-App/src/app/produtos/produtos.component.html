@@ -53,7 +53,7 @@
         [style.margin.px]="imagemMargem">
       </td>
       <td>{{produto.nome}}</td>
-      <td>{{produto.preco | currency :'R$'}}</td>
+      <td>{{produto.preco | currency :'BRL' : true}}</td>
       <td>{{produto.descricao}}</td>    
       <td>{{produto.status == 1 ? 'Disponivel' : produto.status == 0 ? 'Não disponivel' : produto.status }}</td>  
       <td>
@@ -90,7 +90,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Large modal</h4>
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">{{tituloModal}} </h4>
         <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -114,7 +114,7 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label>Preço</label>
-              <input type="number" [ngClass]="{'is-invalid': registerForm.get('preco').errors 
+              <input type="number" step="0.01" name="quantity" min="0.01" [ngClass]="{'is-invalid': registerForm.get('preco').errors 
                 && registerForm.get('preco').touched}" class="form-control is-invalid" formControlName="preco"
                 placeholder="">
               <div *ngIf="registerForm.get('preco').hasError('required')
@@ -157,21 +157,21 @@
                 Enviar Imagem
               </button>
               <!-- $event -->
-              <input type="file" #file [ngClass]="{'is-invalid': registerForm.get('imagemUrl').errors 
-              && registerForm.get('imagemUrl').touched}" (change)="onFileChange($event)" class="form-control is-invalid"
+              <input type="file" accept="image" #file [ngClass]="{'is-invalid': registerForm.get('imagemUrl').errors 
+              && registerForm.get('imagemUrl').touched}" (change)="onFileChange($event)" class="form-control is-valid"
                       formControlName="imagemUrl" placeholder="" style="display: none">
                   </td>
                 </tr>
-              </table>    
-              <div *ngIf="registerForm.get('status').hasError('required')" class="invalid-feedback">
-                A Imagem é obrigatório.
-              </div>
+              </table>  
             </div>
-        
+            <!--
             <p>Form Value: {{registerForm.value | json}}</p>
             <p>Form Status: {{registerForm.status | json}}</p>
-           
+           -->
           </div> 
+          <div class="progress" style="height: 1px;">
+            <div class="progress-bar" role="progressbar" [style.width]="progresso + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </form>
       </div>
       <div class="modal-footer d-flex">

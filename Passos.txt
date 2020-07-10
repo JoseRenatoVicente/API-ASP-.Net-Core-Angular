@@ -84,3 +84,7 @@ Padaria.WebAPI\Padaria.WebAPI.csproj Padaria.Repository\Padaria.Repository.cspro
 https://www.npmjs.com/package/ngx-toastr
 
 npm install ngx-toastr --save
+
+21- Para formatar o preço em BRL
+
+npm install intl --save

@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
-using Padaria.Domain;
+using Padaria.Domain.Entities;
+using Padaria.Domain.Entities.Identity;
 using Padaria.WebAPI.Dtos;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Padaria.WebAPI.Helpers
 {
@@ -16,11 +15,11 @@ namespace Padaria.WebAPI.Helpers
             CreateMap<Produto, ProdutoDto>().ReverseMap();
             CreateMap<Cliente, ClienteDto>().ReverseMap();
             CreateMap<Pedido, PedidoDto>().ReverseMap();
-             /*.ForMember(dest => dest.Produto, opt => {
-              opt.MapFrom(src => src.))
-                */
             CreateMap<Venda, VendaDto>().ReverseMap();
-               
+
+            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<User, UserLoginDto>().ReverseMap();
+
         }
     }
 }
