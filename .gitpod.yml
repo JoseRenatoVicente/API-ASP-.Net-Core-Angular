@@ -1,0 +1,12 @@
+image: 
+  file: Dockerfile
+
+tasks:
+  - command: >
+      dotnet run &&
+      dotnet restore &&
+      dotnet build
+  
+ports:
+  - port: 5000
+    onOpen: open-preview
