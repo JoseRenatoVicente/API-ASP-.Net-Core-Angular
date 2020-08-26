@@ -1,0 +1,205 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Application\\Padaria.Application.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Application\\Padaria.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Application\\Padaria.Application.csproj",
+        "projectName": "Padaria.Application",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Application\\Padaria.Application.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj": {
+                "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj"
+              },
+              "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Infra.Data\\Padaria.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Infra.Data\\Padaria.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj",
+        "projectName": "Padaria.Domain",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Infra.Data\\Padaria.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Infra.Data\\Padaria.Infra.Data.csproj",
+        "projectName": "Padaria.Infra.Data",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Infra.Data\\Padaria.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj": {
+                "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

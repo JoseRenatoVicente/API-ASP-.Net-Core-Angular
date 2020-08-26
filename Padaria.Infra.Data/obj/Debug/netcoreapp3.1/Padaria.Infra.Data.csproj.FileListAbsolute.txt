@@ -1,0 +1,12 @@
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\bin\Debug\netcoreapp3.1\Padaria.Infra.Data.deps.json
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\bin\Debug\netcoreapp3.1\Padaria.Infra.Data.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\bin\Debug\netcoreapp3.1\Padaria.Infra.Data.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\bin\Debug\netcoreapp3.1\Padaria.Domain.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\bin\Debug\netcoreapp3.1\Padaria.Domain.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.csprojAssemblyReference.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.AssemblyInfo.cs
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.csproj.CopyComplete
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Infra.Data\obj\Debug\netcoreapp3.1\Padaria.Infra.Data.pdb

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Padaria.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.Get(System.Int32,System.Int32)">
+            <summary>
+            Requisição usada para pegar(GET) informações
+            </summary>
+            <param name="PagNumero">Numero da página(padrão é 1)</param>
+            <param name="PagRegistro">Quantidade de Registro por página(padrão é 10)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.Get(System.Guid)">
+            <summary>
+            Requisição usada para pegar uma entidade existente pelo ID
+            </summary>
+            <param name="id">Passe o GUID aqui</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.Post(`1)">
+            <summary>
+            Requisição usada para adicionar informações a uma entidade
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.PostRange(`1[])">
+            <summary>
+            A Requisição adiciona um array de entidades
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.Delete(System.Guid)">
+            <summary>
+            Requisição usada para excluir uma entidade existente passando o ID dela
+            </summary>
+            <param name="id">Passe o GUID aqui</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.DeleteRange(System.Guid)">
+            <summary>
+            Requisição usada para excluir várias entidades passando o ID dela
+            </summary>
+            <param name="id">Passe o GUID aqui</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.Put(System.Guid,`1)">
+            <summary>
+            Requisição usada para modificar uma entidade existente
+            </summary>
+            <param name="id">O GUID deve ser passado por aqui</param>
+            <param name="viewModel">Passe todos os campos com a modificação. Não é necessario colocar o ID novamente </param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.BaseController`2.Patch(System.Guid,`1)">
+            <summary>
+            Requisição usada para modificar uma entidade existente de forma pacial
+            </summary>
+            <param name="id">O GUID deve ser passado por aqui</param>
+            <param name="viewModel">Passe apenas os campos modificados conforme necessário. Não é necessario colocar o ID novamente</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.GetAdmin(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Usado para um admin ver os produtos incluindo os indisponiveis (necessário autenticação)
+            </summary>
+            <param name="PagNumero">Numero da página(padrão é 1)</param>
+            <param name="PagRegistro">Quantidade de Registro por página(padrão é 4)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.Get(System.Guid)">
+            <summary>
+            Pega um Produto informando o ID dele que um GUID (necessário autenticação)
+            </summary>
+            <param name="ProdutoId">O GUID deve ser passado por aqui</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.Upload">
+            <summary>
+            Faz o upload de uma Imagem (necessário autenticação)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.Post(Padaria.Application.ViewModels.ProdutoViewModel)">
+            <summary>
+            Metodo usado para o cadastro de produtos (necessário autenticação)
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.Put(System.Guid,Padaria.Application.ViewModels.ProdutoViewModel)">
+            <summary>
+            Metodo usado para a edição de um produto existe, não é necessario passar o ID apenas no cabeçalho
+            </summary>
+            <param name="ProdutoId">O GUID deve ser passado por aqui</param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.Patch(System.Guid)">
+            <summary>
+            Metodo usado para a edição de um produto existe, não é necessario passar o ID apenas no cabeçalho
+            </summary>
+            <param name="ProdutoId">O GUID deve ser passado por aqui</param>
+            <returns></returns>
+        </member>
+        <member name="M:Padaria.WebAPI.Controllers.Produto1Controller.Delete(System.Guid)">
+            <summary>
+            Metodo usado para excluir um produto passando o ID dele
+            </summary>
+            <param name="ProdutoId">Passe o GUID aqui</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -2,57 +2,24 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Padaria.Application.ViewModels;
 using Padaria.Domain.Entities;
-using Padaria.Repository;
-using Padaria.WebAPI.Dtos;
+using Padaria.Infra.Data.Repository;
 using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-
 
 namespace Padaria.WebAPI.Controllers
 {
-   
-    [Route("api/[controller]")]
-    [ApiController]//Já identifica as validações e as requisiçoes via corpo
-    public class ProdutoController : ControllerBase
+    public class ProdutoController : BaseController<Produto, ProdutoViewModel>
     {
-        public readonly IPadariaRepository _repo;
-        private readonly IMapper _mapper;
-
-        public ProdutoController(IPadariaRepository repo, IMapper mapper)
+        public ProdutoController(IProdutoRepository repo, IMapper mapper) : base(repo, mapper)
         {
-            _repo = repo;
-            _mapper = mapper;
         }
 
-        //GET api/produto
-        [HttpGet]
-        [AllowAnonymous]
-        public async Task<IActionResult> Get()
-        {
-            try
-            {
-                var produtos = await _repo.GetAllProdutosAsync();
 
-                var results = _mapper.Map<ProdutoDto[]>(produtos);
-                //Precisa do IEnumerable porque retorna mais de um produto
-
-                return Ok(results);
-            }
-            catch (System.Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
-            }
-
-        }
-
-        //Upload da Imagem
         [HttpPost("upload")]
         public async Task<IActionResult> Upload()
         {
@@ -76,119 +43,39 @@ namespace Padaria.WebAPI.Controllers
             }
             catch (System.Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
-            }
-
-            //return BadRequest("Erro ao tentar realizar upload");
-
-        }
-
-        //GET api/produto/id
-        [HttpGet("{ProdutoId}")]
-        public async Task<IActionResult> Get(Guid ProdutoId)
-        {
-            try
-            {
-                var produtos = await _repo.GetAllProdutosAsyncById(ProdutoId);
-
-                var results = _mapper.Map<ProdutoDto>(produtos);
-
-                return Ok(results);
-            }
-            catch (System.Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao tentar realizar upload");
             }
 
         }
 
-        //POST api/produto
-        [HttpPost]
-        public async Task<IActionResult> Post(ProdutoDto model)//FromBody
+        
+
+
+        [HttpGet("Get-User")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetUser([Required] int PagNumero = 1, [Required] int PagRegistro = 4)
         {
             try
             {
-                //Mapeamento inverso do Get, deve estar definido no automappper
-                var produto = _mapper.Map<Produto>(model);
-
-                _repo.Add(produto);
-
-                if (await _repo.SaveChangesAsync())
+                if (!ModelState.IsValid)
                 {
-                    return Created($"/api/produto/{model.Id}", _mapper.Map<ProdutoDto>(produto));
+                    return BadRequest(ModelState);
                 }
+                //var get =  _repo.ListarPor(x => x.Status == "1"); 
 
                 
+                var paging = await _repo.GetPagingAsyncWhere(c => c.Status == "1", PagNumero, PagRegistro);
+
+                //var get = await _repo.ListarPor(c => c.Status == "1");
+
+
+                return Ok(paging);
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
-
-            return BadRequest();
-
-        }
-
-
-         //PUT api/produto
-        [HttpPut("{ProdutoId}")]
-        public async Task<IActionResult> Put(Guid ProdutoId, ProdutoDto model)
-        {
-            try
-            {
-
-                var produto = await _repo.GetAllProdutosAsyncById(ProdutoId);
-                if (produto == null) return NotFound();
-
-                _mapper.Map(model, produto);
-
-                _repo.Update(produto);
-
-                if (await _repo.SaveChangesAsync())
-                {
-                    return Created($"/api/produto/{model.Id}", _mapper.Map<ProdutoDto>(produto));
-                }
-
-
-            }
-            catch (System.Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
-            }
-
-            return BadRequest();
-
-        }
-
-
-        //DELETE api/WeatherForecast
-        [HttpDelete("{ProdutoId}")]
-        public async Task<IActionResult> Delete(Guid ProdutoId)
-        {
-            try
-            {
-                var produto = await _repo.GetAllProdutosAsyncById(ProdutoId);
-                if (produto == null) return NotFound();
-
-                _repo.Delete(produto);
-
-                if (await _repo.SaveChangesAsync())
-                {
-                    return Ok();
-                }
-
-
-            }
-            catch (System.Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
-            }
-
-            return BadRequest();
 
         }
 

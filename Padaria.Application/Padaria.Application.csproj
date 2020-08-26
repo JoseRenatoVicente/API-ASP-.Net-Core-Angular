@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Padaria.Domain\Padaria.Domain.csproj" />
+    <ProjectReference Include="..\Padaria.Infra.Data\Padaria.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

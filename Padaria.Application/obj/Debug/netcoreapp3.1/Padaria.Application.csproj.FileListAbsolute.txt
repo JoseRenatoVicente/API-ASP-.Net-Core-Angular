@@ -1,0 +1,14 @@
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Application.deps.json
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Application.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Application.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Domain.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Infra.Data.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Domain.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\bin\Debug\netcoreapp3.1\Padaria.Infra.Data.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.csprojAssemblyReference.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.AssemblyInfoInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.AssemblyInfo.cs
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.csproj.CopyComplete
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Application\obj\Debug\netcoreapp3.1\Padaria.Application.pdb

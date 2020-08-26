@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Padaria.Domain.Entities.Identity.Role">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Identity.User">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Identity.UserRole">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Cliente">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Property Name="Pedidos" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAQAAEAEAA=</HashCode>
+      <FileName>Entities\Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Funcionario">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAAQAAEAAAA=</HashCode>
+      <FileName>Entities\Funcionario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Pedido">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <Members>
+      <Property Name="Vendas" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAQAIAEAACQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Pedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cliente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Produto">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Members>
+      <Property Name="Vendas" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAAARAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAA=</HashCode>
+      <FileName>Entities\Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Padaria.Domain.Entities.Venda">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQEAAAAAE=</HashCode>
+      <FileName>Entities\Venda.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pedido" />
+      <Property Name="Produto" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

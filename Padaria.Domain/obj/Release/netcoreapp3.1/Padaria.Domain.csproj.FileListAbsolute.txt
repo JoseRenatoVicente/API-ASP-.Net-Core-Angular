@@ -1,0 +1,8 @@
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\bin\Release\netcoreapp3.1\Padaria.Domain.deps.json
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\bin\Release\netcoreapp3.1\Padaria.Domain.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\bin\Release\netcoreapp3.1\Padaria.Domain.pdb
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\obj\Release\netcoreapp3.1\Padaria.Domain.AssemblyInfoInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\obj\Release\netcoreapp3.1\Padaria.Domain.AssemblyInfo.cs
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\obj\Release\netcoreapp3.1\Padaria.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\obj\Release\netcoreapp3.1\Padaria.Domain.dll
+C:\Users\Jose\Desktop\d 16_05\ASP .NET CORE\#API asp\project 13_08\Padaria.Domain\obj\Release\netcoreapp3.1\Padaria.Domain.pdb

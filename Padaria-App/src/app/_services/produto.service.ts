@@ -15,7 +15,7 @@ export class ProdutoService {
   }
 
   getAllProduto(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.baseURL);
+    return this.http.get<Produto[]>(`${this.baseURL}/get-admin`, { headers: this.tokenHeader });
   }
 
   getProdutoById(id: string): Observable<Produto[]> {

@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\Padaria.Domain.csproj": {}
+    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\Padaria.Domain.csproj": {
+    "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\Padaria.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj",
         "projectName": "Padaria.Domain",
-        "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\Padaria.Domain.csproj",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\Padaria.Domain.csproj",
         "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project\\Padaria.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\d 16_05\\ASP .NET CORE\\#API asp\\project 13_081\\Padaria.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -43,7 +40,11 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [
@@ -61,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

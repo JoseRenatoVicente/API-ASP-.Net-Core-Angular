@@ -12,8 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Padaria.Application.ViewModels;
 using Padaria.Domain.Entities.Identity;
-using Padaria.WebAPI.Dtos;
 
 namespace Padaria.WebAPI.Controllers
 {
@@ -37,16 +37,9 @@ namespace Padaria.WebAPI.Controllers
             _userManager = userManager;
         }
 
-        /*[HttpGet("GetUser")]
-        public async Task<IActionResult> GetUser()
-        {
-            return Ok(new UserDto());
-        }
-        */
-
         [HttpPost("Register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(UserDto userDto)
+        public async Task<IActionResult> Register(UserViewModel userDto)
         {
             try
             {
@@ -54,7 +47,7 @@ namespace Padaria.WebAPI.Controllers
 
                 var result = await _userManager.CreateAsync(user, userDto.Password);
 
-                var userToReturn = _mapper.Map<UserDto>(user);
+                var userToReturn = _mapper.Map<UserViewModel>(user);
 
                 if (result.Succeeded)
                 {
@@ -71,7 +64,7 @@ namespace Padaria.WebAPI.Controllers
 
         [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(UserLoginDto userLogin)
+        public async Task<IActionResult> Login(UserLoginViewModel userLogin)
         {
             try
             {
@@ -84,7 +77,7 @@ namespace Padaria.WebAPI.Controllers
                     var appUser = await _userManager.Users
                         .FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
 
-                    var userToReturn = _mapper.Map<UserLoginDto>(appUser);
+                    var userToReturn = _mapper.Map<UserLoginViewModel>(appUser);
 
                     return Ok(new
                     {
@@ -104,10 +97,10 @@ namespace Padaria.WebAPI.Controllers
         private async Task<string> GenerateJWToken(User user)
         {
             var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.UserName)
-        };
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.UserName)
+            };
 
             var roles = await _userManager.GetRolesAsync(user);
 
@@ -117,7 +110,7 @@ namespace Padaria.WebAPI.Controllers
             }
 
             var key = new SymmetricSecurityKey(Encoding.ASCII
-                .GetBytes(_config.GetSection("AppSettings:Token").Value));
+                .GetBytes(Settings.Key));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
