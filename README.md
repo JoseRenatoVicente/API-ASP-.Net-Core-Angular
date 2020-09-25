@@ -8,15 +8,16 @@ Sistema E-commerce de uma Padaria usando o asp.net core 3.1 como WebAPI e angula
 - ASP.NET MVC Core 
 - JWT Bearer Authentication
 - ASP.NET Identity Core
+- Angular 
+- Swagger UI com suporte ao JWT
 - Entity Framework Core 3.1
 - AutoMapper
 - FluentValidator
-- Swagger UI with JWT support
-- Angular 
+
+
 
 ## Arquitetura de Software
 
 - Conceitos SOLID e Código Limpo
-- Domain Driven Design
-- Domain Validations
 - Repository
+- Domain Driven Design
